@@ -17,11 +17,11 @@ Ext.define('TrainingJs.view.main.MainController', {
         }
     },
     init: function() {
-        var main = this.getView();
-        var studentView = main.lookupReference('studentview');
-        console.log(studentView);
-        var store = studentView.getStore();
-        store.load();
+        // var main = this.getView();
+        // var studentView = main.lookupReference('studentview');
+        // var store = studentView.getStore();
+        // store.load();
+
 
     }
 

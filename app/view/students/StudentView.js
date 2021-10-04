@@ -1,7 +1,7 @@
 Ext.define('TrainingJs.view.students.StudentView', {
     extend: 'Ext.grid.Panel',
     xtype: 'studentview',
-    // controller: 'studentviewcontroller',
+    controller: 'studentviewcontroller',
     //mandatory properties for grid => columns, store
     store: {
         type: 'students'
@@ -26,6 +26,25 @@ Ext.define('TrainingJs.view.students.StudentView', {
             dataIndex: 'county', //1/6
             flex: 1
         }
+
+    ],
+    tbar: [{
+            text: 'Add',
+            handler: 'onAddButtonClick',
+        },
+        {
+            text: 'Details',
+            handler: 'onDetailsButtonClick',
+        },
+        {
+            text: 'Remove',
+            handler: 'onRemoveButtonClick',
+        },
+        {
+            text: 'Refresh',
+            handler: 'onRefreshButtonClick',
+        }
+
 
     ],
     bbar: [{

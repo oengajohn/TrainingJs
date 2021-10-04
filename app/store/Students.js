@@ -10,15 +10,9 @@ Ext.define('TrainingJs.store.Students', {
         reader: {
             type: 'json',
             rootProperty: 'students',
-            totalProperty: 'X-Total-Count'
+            totalProperty: 'totalCount'
         }
     },
-    pageSize: 2,
-    listeners: {
-        load: function(store, records, successful, operation, eOpts) {
-            console.log(records);
-            console.log(operation);
-        }
-    }
-    // autoLoad: true,
+    // pageSize: 2,
+    autoLoad: true,
 });
