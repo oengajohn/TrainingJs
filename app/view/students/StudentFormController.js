@@ -11,15 +11,26 @@ Ext.define('TrainingJs.view.students.StudentFormController', {
         var me = this,
             window = me.getView(),
             form = window.lookupReference('add-form').getForm();
+        var id = form.findField('id').getValue();
+        var url = 'http://localhost:3000/students/'; //POST
+        var method = 'POST';
+        console.log(id);
+        if (id) {
+            url += id;
+            method = 'PUT';
+        }
+
+
 
         if (form.isValid()) {
             form.submit({
-                url: 'http://localhost:3000/students',
+                url: url,
+                method: method,
                 success: function(form, action) {
                     Ext.Msg.alert('Success', action.result.msg);
                 },
                 failure: function(form, action) {
-                    if (action.response.status === 201) {
+                    if (action.response.status === 201 || action.response.status === 200) {
                         Ext.Msg.alert('Success', "Saved successfully");
                     } else {
                         switch (action.failureType) {

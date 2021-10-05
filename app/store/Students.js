@@ -13,6 +13,6 @@ Ext.define('TrainingJs.store.Students', {
             totalProperty: 'totalCount'
         }
     },
-    // pageSize: 2,
+    // pageSize: 5,
     autoLoad: true,
 });

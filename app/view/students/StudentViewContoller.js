@@ -12,13 +12,50 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
         // Ext.create({
         //     xtype: 'studentform'
         // }).show();
-        Ext.create({
+        var me = this;
+        me.showForm();
+
+
+    },
+    showForm: function(record) {
+        var window = Ext.create({
             xtype: 'studentform'
         });
+        if (record) {
+            var form = window.lookupReference('add-form').getForm();
+            // case 1
+            form.loadRecord(record);
+            //case 2
+            /*form.load({
+                url: `http://localhost:3000/students/${record.get('id')}`,
+                method: 'GET',
+                
+                success: function(form, action) {
+                    console.log(action.response);
+                    console.log(action.result);
+                    console.log(action.type);
+
+                },
+                failure: function(form, action) {
+                    console.log(action.failureType);
+                    console.log(action.response);
+                    console.log(action.result);
+                    console.log(action.type);
+                }
+            })*/
+
+        }
 
     },
     onDetailsButtonClick: function() {
-        console.log("details  student");
+        var me = this,
+            grid = me.getView();
+        var records = grid.getSelectionModel().getSelection(); //arary
+        if (records[0]) {
+            me.showForm(records[0]);
+        }
+
+
     },
     onRemoveButtonClick: function() {
         console.log("remove  student");

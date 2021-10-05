@@ -21,6 +21,7 @@ Ext.define('TrainingJs.view.students.StudentForm', {
                 name: 'id',
                 fieldLabel: 'Student ID',
                 minValue: 0,
+                readOnly: true,
             },
             {
                 xtype: 'textfield',

@@ -34,7 +34,7 @@ Ext.define('TrainingJs.view.students.StudentView', {
         },
         {
             text: 'Details',
-            handler: 'onDetailsButtonClick',
+            handler: 'onDetailsButtonClick', //update
         },
         {
             text: 'Remove',
@@ -47,9 +47,14 @@ Ext.define('TrainingJs.view.students.StudentView', {
 
 
     ],
-    bbar: [{
+    selModel: 'checkboxmodel',
+    //  {
+    //     selType: 'checkboxmodel',
+    //     mode: 'MULTI'
+    // },
+    bbar: {
         xtype: 'pagingtoolbar',
         displayInfo: true
-    }]
+    }
 
 })
