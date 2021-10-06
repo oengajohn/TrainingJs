@@ -1,6 +1,7 @@
 Ext.define('TrainingJs.store.Students', {
     extend: 'Ext.data.Store',
     alias: 'store.students',
+    storeId: 'students',
 
     model: 'TrainingJs.model.Student',
 
