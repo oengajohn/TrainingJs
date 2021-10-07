@@ -27,9 +27,8 @@ Ext.define('TrainingJs.view.user.UserView', {
 
     ],
     tbar: [{
-            text: 'Add',
-            tooltip: 'Add new User',
-            handler: 'onAddClick'
+            text: 'Vbox',
+            handler: 'onVbox'
         },
         {
             text: 'Details',
