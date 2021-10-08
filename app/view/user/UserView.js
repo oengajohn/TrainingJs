@@ -13,31 +13,19 @@ Ext.define('TrainingJs.view.user.UserView', {
             dataIndex: 'id'
         },
         {
-            text: 'First',
-            dataIndex: 'first'
+            text: 'Name',
+            dataIndex: 'name'
         },
         {
-            text: 'Last',
-            dataIndex: 'last'
-        },
-        {
-            text: 'Handle',
-            dataIndex: 'handle'
+            text: 'Company Name',
+            dataIndex: 'companyName'
         },
 
     ],
-    tbar: [{
-            text: 'Vbox',
-            handler: 'onVbox'
-        },
-        {
-            text: 'Details',
-            tooltip: 'View details of selected user'
-        },
-        {
-            text: 'Remove',
-            tooltip: 'Remove user from list'
-        },
-    ]
+    bbar: {
+        xtype: 'pagingtoolbar',
+        displayInfo: true
+    }
+
 
 });
