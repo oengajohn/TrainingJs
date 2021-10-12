@@ -1,7 +1,7 @@
 Ext.define('TrainingJs.view.user.UserForm', {
     extend: 'Ext.window.Window',
     xtype: 'userform',
-    controller: '',
+    // controller: '',
     autoShow: true,
     items: [{
         xtype: 'form',
