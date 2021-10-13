@@ -7,6 +7,7 @@ Ext.define('TrainingJs.view.base.NavigationPanel', {
         type: 'menu'
     },
     listeners: {
+        // click:'onClick',
         itemclick: 'onItemClick',
     }
 

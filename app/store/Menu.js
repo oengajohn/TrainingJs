@@ -12,7 +12,7 @@ Ext.define('TrainingJs.store.Menu', {
                         text: 'Users',
                         leaf: true,
                         xtype: 'userview',
-                        id: 'users',
+                        iconCls: 'fas fa-users',
                     },
                     {
                         text: 'Add User',

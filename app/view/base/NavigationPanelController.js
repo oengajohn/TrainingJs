@@ -8,30 +8,24 @@ Ext.define('TrainingJs.view.base.NavigationPanelController', {
 
     ],
     init: function() {},
-    onItemClick: function(sender, info, eOpts) {
-        // console.log(info.data.xtype);
-        // console.log(info.data.leaf);
-        // switch (info.data.id) {
-        //     case 'users':
+    onItemClick: function(treepanel, record, item, index, e, eOpts) {
 
-        //         break;
+        var centerPanel = Ext.ComponentQuery.query('mainviewport #center')[0];
+        console.log(centerPanel);
+        //check if exits in the panel if so get and show it as active item and if not create a new item and show it as 
+        // active
+        var newItem = centerPanel.items.findBy(function(item, index) {
+            return record.get('text') === item.title;
+        });
 
-        //     default:
-        //         break;
-        // }
-        if (info.data.leaf) {
-            //reference to the center panel
-            var center = Ext.ComponentQuery.query('viewport  #center')[0];
-            var item = {
-                title: info.data.text,
+        console.log(record);
+        if (newItem === null || newItem === undefined) {
+            newItem = centerPanel.add({
+                xtype: record.get('xtype'),
+                title: record.get('text'),
                 closable: true,
-                items: [{
-                    xtype: info.data.xtype
-                }]
-            };
-            center.add(item);
-            center.setActiveTab(item);
-
+            });
         }
+        centerPanel.setActiveItem(newItem);
     }
 });
