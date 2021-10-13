@@ -1,15 +1,15 @@
 
-Ext.define('TrainingJs.view.posts/PostForm',{
+Ext.define('TrainingJs.view.posts.PostForm',{
     extend: 'Ext.form.FormPanel',
 
     requires: [
-        'TrainingJs.view.posts/PostFormController',
-        'TrainingJs.view.posts/PostFormModel'
+        'TrainingJs.view.posts.PostFormController',
+        'TrainingJs.view.posts.PostFormModel'
     ],
 
-    controller: 'posts/postform',
+    controller: 'posts-postform',
     viewModel: {
-        type: 'posts/postform'
+        type: 'posts-postform'
     },
 
     html: 'Hello, World!!'

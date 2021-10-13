@@ -208,6 +208,9 @@
         {
             "path": "app.js",
             "bundle": true
+        },
+        {
+            "path": "resources/axios.min.js"
         }
     ],
 
