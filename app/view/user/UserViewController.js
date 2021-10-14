@@ -5,5 +5,10 @@ Ext.define('TrainingJs.view.user.UserViewController', {
         Ext.create({
             xtype: 'borderlayout'
         });
+    },
+    onShowForm: function(btn, e, eOpts) {
+        Ext.create({
+            xtype: 'formfields'
+        });
     }
 })

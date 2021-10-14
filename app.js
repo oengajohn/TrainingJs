@@ -11,7 +11,15 @@ Ext.application({
     requires: [
         // This will automatically load all classes in the TrainingJs namespace
         // so that application classes do not need to require each other.
-        'TrainingJs.*'
+        'Ext.layout.container.Fit',
+        'Ext.form.Panel',
+        'Ext.layout.container.Border',
+        'Ext.layout.container.Center',
+        'Ext.form.FieldSet',
+        'Ext.grid.Panel',
+        'Ext.layout.container.Accordion',
+        'TrainingJs.*',
+
     ],
     //uses lazily loaded
 

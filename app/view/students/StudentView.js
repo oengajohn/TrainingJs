@@ -34,6 +34,7 @@ Ext.define('TrainingJs.view.students.StudentView', {
         },
         {
             text: 'Details',
+            ui: 'btn-ui',
             handler: 'onDetailsButtonClick', //update
         },
         {

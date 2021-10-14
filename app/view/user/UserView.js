@@ -7,6 +7,10 @@ Ext.define('TrainingJs.view.user.UserView', {
         type: 'users'
     },
     title: 'Users',
+    tbar: [{
+        text: 'showForm',
+        handler: 'onShowForm'
+    }, ],
     selModel: 'checkboxmodel',
     columns: [{
             text: '#',

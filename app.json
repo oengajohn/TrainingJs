@@ -4,7 +4,7 @@
     "version": "1.0.0.0",
     "framework": "ext",
     "toolkit": "classic",
-    "theme": "theme-triton",
+    "theme": "TrainingJsTriton",
 
     /**
      * The list of required packages (with optional versions; default is "latest").
@@ -16,7 +16,8 @@
      *      ]
      */
     "requires": [
-        "font-awesome"
+        "font-awesome",
+        "charts"
     ],
 
     /**
@@ -208,10 +209,8 @@
         {
             "path": "app.js",
             "bundle": true
-        },
-        {
-            "path": "resources/axios.min.js"
         }
+
     ],
 
     /**
