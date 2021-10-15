@@ -1,11 +1,11 @@
 Ext.define('TrainingJs.form.field.VTypes', {
     override: 'Ext.form.field.VTypes',
 
-    // password: function(value) {
-    //     return this.passwordRe.test(value);
-    // },
-    // passwordRe: /^[A-Za-z]\w{7,14}$/i,
-    // passwordText: 'Input Password and Submit [7 to 15 characters which contain only characters, numeric digits, underscore and first character must be a letter].',
+    mypassword: function(value) {
+        return this.mypasswordRe.test(value);
+    },
+    mypasswordRe: /^[A-Za-z]\w{7,14}$/i,
+    mypasswordText: 'Input Password and Submit [7 to 15 characters which contain only characters, numeric digits, underscore and first character must be a letter].',
 
     daterange: function(val, field) {
         var date = field.parseDate(val),
