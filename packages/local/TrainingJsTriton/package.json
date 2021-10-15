@@ -260,7 +260,66 @@
         "requires": [],
         // WARNING! Sencha Themer relies on these settings, modifying them may break functionality in Themer.
         "themer": {
-            "version": "1.4.0"
+            "version": "1.4.0",
+            "palette": [
+                {
+                    "variable": "base_color",
+                    "displayName": "Base Color",
+                    "order": 0,
+                    "r": 18,
+                    "g": 102,
+                    "b": 241,
+                    "a": 1,
+                    "h": 0.6038863976083707,
+                    "s": 0.9253112033195021,
+                    "v": 0.9450980392156862,
+                    "id": "c61ea7ad-b699-491b-94a7-f752b3189902",
+                    "transparent": false,
+                    "sass": "",
+                    "base": true,
+                    "tooltip": "<b>Base Color</b><br/>#1266F1",
+                    "rgba": "rgba(18, 102, 241, 1)",
+                    "hex": "#1266F1"
+                },
+                {
+                    "variable": "body_background_color",
+                    "displayName": "Body Background Color",
+                    "order": 1,
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1,
+                    "h": 0,
+                    "s": 0,
+                    "v": 1,
+                    "id": "65bb801f-eb04-481c-baa2-5d965fb0a74e",
+                    "transparent": false,
+                    "sass": "",
+                    "base": true,
+                    "tooltip": "<b>Body Background Color</b><br/>#FFFFFF",
+                    "rgba": "rgba(255, 255, 255, 1)",
+                    "hex": "#FFFFFF"
+                },
+                {
+                    "variable": "color",
+                    "displayName": "Default Font Color",
+                    "order": 2,
+                    "r": 64,
+                    "g": 64,
+                    "b": 64,
+                    "a": 1,
+                    "h": 0,
+                    "s": 0,
+                    "v": 0.25098039215686274,
+                    "id": "994c7e12-25f2-4613-96a9-41eac042a6de",
+                    "transparent": false,
+                    "sass": "",
+                    "base": true,
+                    "tooltip": "<b>Default Font Color</b><br/>#404040",
+                    "rgba": "rgba(64, 64, 64, 1)",
+                    "hex": "#404040"
+                }
+            ]
         }
     }
 }

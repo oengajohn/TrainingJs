@@ -6,7 +6,7 @@ Ext.define('TrainingJs.view.user.FormFieldsController', {
      */
     mixins: [],
     init: function() {
-        Ext.getStore('counties').load();
+        // Ext.getStore('counties').load();
 
     },
     onSubmit: function(btn, e, eOpts) {
