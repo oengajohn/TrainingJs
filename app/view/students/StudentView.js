@@ -1,10 +1,14 @@
 Ext.define('TrainingJs.view.students.StudentView', {
     extend: 'Ext.grid.Panel',
     xtype: 'studentview',
+    reference: 'studentview',
     controller: 'studentviewcontroller',
     //mandatory properties for grid => columns, store
     store: {
         type: 'students'
+    },
+    viewModel: {
+        type: 'studentviewmodel'
     },
     columns: [{
             text: 'ID',
@@ -31,19 +35,33 @@ Ext.define('TrainingJs.view.students.StudentView', {
     tbar: [{
             text: 'Add',
             handler: 'onAddButtonClick',
+            bind: {
+                disabled: '{!isAdmin}'
+            }
+
         },
         {
             text: 'Details',
-            ui: 'btn-ui',
+            bind: {
+                disabled: '{!studentview.selection}'
+            },
+            // ui: 'btn-ui',
             handler: 'onDetailsButtonClick', //update
         },
         {
             text: 'Remove',
+            bind: {
+                disabled: '{!studentview.selection}'
+            },
             handler: 'onRemoveButtonClick',
         },
         {
             text: 'Refresh',
             handler: 'onRefreshButtonClick',
+        },
+        {
+            text: 'ToggleIsAdmin',
+            handler: 'onToggleIsAdminButtonClick',
         }
 
 

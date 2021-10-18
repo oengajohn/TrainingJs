@@ -6,7 +6,15 @@ Ext.define('TrainingJs.view.students.StudentForm', {
     shadow: true,
     modal: true,
     autoShow: true,
-    title: 'Student Form',
+    viewModel: {
+        data: {
+            record: null
+        }
+    },
+    bind: {
+        title: 'Hello {record.regNo}'
+    },
+    // title: 'Student Form',
     //content of window -form
     items: [{
         xtype: 'form',
@@ -31,12 +39,20 @@ Ext.define('TrainingJs.view.students.StudentForm', {
             {
                 xtype: 'textfield',
                 name: 'regNo',
+                bind: {
+                    value: '{record.regNo}'
+                },
                 fieldLabel: 'Registration Number'
             },
             {
                 xtype: 'textfield',
                 name: 'county',
-                fieldLabel: 'County'
+                fieldLabel: 'County',
+                viewModel: {
+                    data: {
+
+                    }
+                }
             }
         ],
         buttons: [{

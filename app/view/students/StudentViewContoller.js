@@ -13,13 +13,18 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
         //     xtype: 'studentform'
         // }).show();
         var me = this;
-        me.showForm();
+        me.showForm(null, "Add new Student");
 
 
     },
     showForm: function(record) {
         var window = Ext.create({
-            xtype: 'studentform'
+            xtype: 'studentform',
+            viewModel: {
+                data: {
+                    record: record
+                }
+            }
         });
         if (record) {
             var form = window.lookupReference('add-form').getForm();
@@ -52,6 +57,7 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
             grid = me.getView();
         var records = grid.getSelectionModel().getSelection();
         if (records[0]) {
+            var rec = records[0];
             me.showForm(records[0]);
         }
 
@@ -93,6 +99,25 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
             store = grid.getStore();
         store.reload();
     },
+    onToggleIsAdminButtonClick: function(btn, e, eOpts) {
+        var me = this,
+            view = me.getView(),
+            vm = me.getViewModel();
+        var isAdmin = vm.get('isAdmin');
+        // console.log(isAdmin);
+        // vm.set('isAdmin', !isAdmin);
+        // var isAdmin2 = vm.get('isAdmin');
+        // console.log(isAdmin2);
+        var myStudent = vm.get('myStudent');
+        console.log();
+        var isStudentAdmin = (myStudent.get('id') === 78);
+        console.log(isStudentAdmin);
+
+        vm.set('isAdmin', isStudentAdmin);
+
+
+
+    }
 
 
 

@@ -6,12 +6,12 @@ Ext.define('TrainingJs.store.Menu', {
     root: {
         expanded: true,
         children: [{
-                text: 'Users',
+                text: 'Students',
                 expanded: true,
                 children: [{
-                        text: 'Users',
+                        text: 'Students',
                         leaf: true,
-                        xtype: 'userview',
+                        xtype: 'studentview',
                         iconCls: 'fas fa-users',
                     },
                     {
