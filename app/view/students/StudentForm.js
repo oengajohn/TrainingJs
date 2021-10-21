@@ -7,17 +7,19 @@ Ext.define('TrainingJs.view.students.StudentForm', {
     modal: true,
     autoShow: true,
     viewModel: {
-        data: {
-            record: null
-        }
+        type: 'studentformviewmodel'
     },
+    title: 'Student Form', //static
     bind: {
-        title: 'Hello {record.regNo}'
+        title: '{myCustomTitle}' //bound
     },
     // title: 'Student Form',
     //content of window -form
     items: [{
         xtype: 'form',
+        bind: {
+            title: '{myCustomTitle}',
+        },
         reference: 'add-form',
         jsonSubmit: true,
         defaults: {
@@ -34,7 +36,10 @@ Ext.define('TrainingJs.view.students.StudentForm', {
             {
                 xtype: 'textfield',
                 name: 'name',
-                fieldLabel: 'Name'
+                fieldLabel: 'Name',
+                bind: {
+                    allowBlank: '{!isActive}',
+                },
             },
             {
                 xtype: 'textfield',
@@ -53,6 +58,20 @@ Ext.define('TrainingJs.view.students.StudentForm', {
 
                     }
                 }
+            },
+            {
+                boxLabel: 'Is Admin',
+                xtype: 'checkbox',
+                reference: 'isAdminCheckBox'
+
+            },
+            {
+                xtype: 'textfield',
+                fieldLabel: 'Admin key',
+                bind: {
+                    disabled: '{!isAdminCheckBox.checked}',
+                    allowBlank: '{!isAdminCheckBox.checked}',
+                },
             }
         ],
         buttons: [{
