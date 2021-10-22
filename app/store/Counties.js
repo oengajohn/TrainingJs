@@ -3,19 +3,13 @@ Ext.define('TrainingJs.store.Counties', {
     alias: 'store.counties',
     storeId: 'counties',
     model: 'TrainingJs.model.County',
-    data: {
-        rows: [
-            [1, "Mombasa", "Mombasa"],
-            [2, "Kwale", "Kwale"],
-            [3, "Kilifi", "Kilifi"]
-        ]
-    },
+
     proxy: {
-        type: 'memory',
-        // url: '/user',
+        type: 'ajax',
+        url: 'http://localhost:3000/counties',
         reader: {
             type: 'json',
-            rootProperty: 'rows',
+            rootProperty: 'counties',
         }
     }
 

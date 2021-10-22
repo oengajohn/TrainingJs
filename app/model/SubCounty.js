@@ -1,6 +1,5 @@
-Ext.define('TrainingJs.model.County', {
+Ext.define('TrainingJs.model.SubCounty', {
     extend: 'Ext.data.Model',
-
     fields: [{
             name: 'id',
             type: 'int'
@@ -10,9 +9,9 @@ Ext.define('TrainingJs.model.County', {
             type: 'string'
         },
         {
-            name: 'code',
-            type: 'string'
+            name: 'countyId',
+            type: 'int'
         }
-
     ]
+
 });

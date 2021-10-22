@@ -25,8 +25,9 @@ Ext.define('TrainingJs.store.Menu', {
                 text: 'homework',
                 expanded: true,
                 children: [{
-                        text: 'book report',
-                        leaf: true
+                        text: 'Users',
+                        leaf: true,
+                        xtype: 'userview'
                     },
                     {
                         text: 'algebra',
