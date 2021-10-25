@@ -1,6 +1,7 @@
 Ext.define('TrainingJs.view.user.UserView', {
     extend: 'Ext.grid.GridPanel',
     xtype: 'userview',
+
     controller: 'userviewcontroller',
 
     store: {
@@ -8,9 +9,14 @@ Ext.define('TrainingJs.view.user.UserView', {
     },
     title: 'Users',
     tbar: [{
-        text: 'showForm',
-        handler: 'onShowForm'
-    }, ],
+            text: 'showForm',
+            handler: 'onShowForm'
+        },
+        {
+            text: 'Remove',
+            handler: 'onRemoveButtonClick',
+        },
+    ],
     selModel: 'checkboxmodel',
     columns: [{
             text: '#',

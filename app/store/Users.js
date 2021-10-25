@@ -14,7 +14,7 @@ Ext.define('TrainingJs.store.Users', {
         }
     },
     autoLoad: true,
-    pageSize: 1,
+    pageSize: 5,
 
 
 });

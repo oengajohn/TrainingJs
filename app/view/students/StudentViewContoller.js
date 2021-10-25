@@ -1,11 +1,14 @@
 Ext.define('TrainingJs.view.students.StudentViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.studentviewcontroller',
+    mixins: [
+        'TrainingJs.mixins.GridMixin',
+    ],
 
     init: function() {
-        var studentView = this.getView();
-        var store = studentView.getStore();
-        store.load();
+        //load the data
+        this.loadGridStore();
+
     },
     onAddButtonClick: function() {
         // Ext.create('TrainingJs.view.students.StudentForm').show();
@@ -54,39 +57,23 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
     },
     onDetailsButtonClick: function() {
         var me = this,
-            grid = me.getView();
-        var records = grid.getSelectionModel().getSelection();
-        if (records[0]) {
-            var rec = records[0];
-            me.showForm(records[0]);
+            record = me.getSelectedRecord();
+        if (record) {
+            me.showForm(record);
         }
-
-
     },
     onRemoveButtonClick: function() {
         var me = this,
-            grid = me.getView();
-        var records = grid.getSelectionModel().getSelection();
-        if (records[0]) {
-            var record = records[0];
-            Ext.Ajax.request({
-                url: `http://localhost:3000/students/${record.get('id')}`,
-                method: 'DELETE',
-                success: function(response, eOpts) {
-                    console.log(response);
-                    console.log(eOpts);
-                },
-                failure: function(response, eOpts) {
-                    console.log(response);
-                    console.log(eOpts);
-                }
-            });
+            grid = me.getView(),
+            record = me.getSelectedRecord();
+        if (record) {
+            var url = `http://localhost:3000/students/${record.get('id')}`;
+            me.removeSelectedRecord(url, grid);
+
             //case 1
             // grid.getStore().reload();
             //case 2 
             // storeName => reload
-            Ext.getStore('students').reload();
-
         }
 
         // ajax request,
@@ -94,10 +81,7 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
 
     },
     onRefreshButtonClick: function() {
-        var me = this,
-            grid = me.getView(),
-            store = grid.getStore();
-        store.reload();
+        this.loadGridStore();
     },
     onToggleIsAdminButtonClick: function(btn, e, eOpts) {
         var me = this,
