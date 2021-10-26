@@ -27,7 +27,7 @@ Ext.define('TrainingJs.view.user.UserViewController', {
     },
     onShowForm: function(btn, e, eOpts) {
         Ext.create({
-            xtype: 'cascadingcombobox'
+            xtype: 'lifecycleevents'
         });
     }
 });

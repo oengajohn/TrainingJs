@@ -17,7 +17,8 @@ Ext.define('TrainingJs.store.Menu', {
                     {
                         text: 'Add User',
                         leaf: true,
-                        xtype: 'userform'
+                        xtype: 'userformpanel',
+                        iconCls: 'fas fa-user-edit'
                     }
                 ]
             },

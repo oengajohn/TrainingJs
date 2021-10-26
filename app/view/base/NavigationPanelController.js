@@ -22,6 +22,7 @@ Ext.define('TrainingJs.view.base.NavigationPanelController', {
         if (newItem === null || newItem === undefined) {
             newItem = centerPanel.add({
                 xtype: record.get('xtype'),
+                iconCls: record.get('iconCls'),
                 title: record.get('text'),
                 closable: true,
             });
