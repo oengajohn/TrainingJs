@@ -5,7 +5,14 @@ Ext.define('TrainingJs.view.base.MainViewPort', {
     controller: 'mainviewportcontroller',
     items: [{
             region: 'north',
-            html: '<h1 class="x-panel-header">Page Title</h1>',
+            items: [{
+                xtype: 'toolbar',
+                items: [{
+                    text: 'Logout',
+                    iconCls: 'fas fa-sign-out',
+                    handler: 'onLogout'
+                }]
+            }],
             border: false,
             margin: '0 0 5 0'
         },

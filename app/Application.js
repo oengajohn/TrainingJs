@@ -14,7 +14,7 @@ Ext.define('TrainingJs.Application', {
             quickTips: true
         }
     },
-
+    defaultToken: 'home',
     onAppUpdate: function() {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
             function(choice) {
@@ -23,5 +23,18 @@ Ext.define('TrainingJs.Application', {
                 }
             }
         );
+    },
+    launch: function(profile) {
+        //? check if user is already logged in 
+        //? if true => create the main view
+        //? otherwise create login window
+        let isLoggedIn = localStorage.getItem('isLoggedIn');
+        console.log(typeof isLoggedIn);
+
+        if (isLoggedIn) {
+            Ext.widget('mainviewport');
+        } else {
+            Ext.widget('loginwindow');
+        }
     }
 });

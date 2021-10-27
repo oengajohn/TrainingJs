@@ -2,6 +2,9 @@ Ext.define('TrainingJs.view.students.StudentForm', {
     extend: 'Ext.window.Window',
     xtype: 'studentform',
     controller: 'studentformcontroller',
+    requires: [
+
+    ],
     width: 520,
     shadow: true,
     modal: true,
