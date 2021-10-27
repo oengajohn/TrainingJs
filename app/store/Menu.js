@@ -6,6 +6,20 @@ Ext.define('TrainingJs.store.Menu', {
     root: {
         expanded: true,
         children: [{
+                text: 'Counties',
+                expanded: true,
+                children: [{
+                        text: 'Counties',
+                        leaf: true,
+                        xtype: 'countypanel',
+                    },
+                    {
+                        text: 'Add County',
+                        leaf: true,
+                        xtype: 'countyformpanel',
+                    }
+                ]
+            }, {
                 text: 'Students',
                 expanded: true,
                 children: [{
