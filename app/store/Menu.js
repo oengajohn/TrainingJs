@@ -10,12 +10,14 @@ Ext.define('TrainingJs.store.Menu', {
                 expanded: true,
                 children: [{
                         text: 'Counties',
+                        url: 'counties',
                         leaf: true,
                         xtype: 'countypanel',
                     },
                     {
                         text: 'Add County',
                         leaf: true,
+                        url: 'add-county',
                         xtype: 'countyformpanel',
                     }
                 ]
@@ -25,13 +27,15 @@ Ext.define('TrainingJs.store.Menu', {
                 children: [{
                         text: 'Students',
                         leaf: true,
+                        url: 'students',
                         xtype: 'studentview',
                         iconCls: 'fas fa-users',
                     },
                     {
-                        text: 'Add User',
+                        text: 'Add Student',
                         leaf: true,
-                        xtype: 'userformpanel',
+                        url: 'student-form-panel',
+                        xtype: 'studentformpanel',
                         iconCls: 'fas fa-user-edit'
                     }
                 ]

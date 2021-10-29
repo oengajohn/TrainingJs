@@ -7,40 +7,63 @@ Ext.define('TrainingJs.view.base.MainViewPortController', {
     mixins: [
 
     ],
-    listen: {
-        controller: {
-            '#': {
-                unmatchedroute: 'onUnmatchedRoute'
-            }
-        }
-    },
     routes: {
-        'students': 'onStudentView'
+        'students': 'onStudentUrlActivated',
+        'counties': 'onCountiesActivated',
+        'student-form-panel': 'onShowStudentFormPanel',
+        "students/:id": "onShowStudentWithId"
     },
-    onUnmatchedRoute: function(route) {
-        TrainingJs.Util.showError('No matching route found for route ' + route);
-        this.redirectTo('students', {
-            replace: true
+    onShowStudentWithId: function(id) {
+        console.log("Student with id routes was executed");
+        //? show form panel
+        this.onShowStudentFormPanel();
+        //? fill the form with the data
+        //! http://localhost:3000/students/2
+        let form = Ext.ComponentQuery.query('studentformpanel')[0];
+        form.load({
+            url: `http://localhost:3000/students/${id}`,
+            method: 'GET',
+            failure: function(form, action) {
+                console.log(action.responseText);
+                // Ext.Msg.alert("Load failed", action.result.errorMessage);
+            }
         });
+
+
+
     },
-    onStudentView: function(args) {
+    onShowStudentFormPanel: function() {
+        console.log("Student new form  was executed");
+        //? show add form panel
+        this.showView('Add Student', 'studentformpanel', 'fa fa-plus-square');
+    },
 
-        var center = Ext.ComponentQuery.query('mainviewport #center')[0];
-
-        var newItem = center.items.findBy(function(item, index) {
-            return 'Students' === item.title;
+    onStudentUrlActivated: function() {
+        this.showView("Students", "studentview", "fa fa-list-alt");
+    },
+    showView: function(title, xtype, iconCls) {
+        //? get hold of the center panel 
+        var centerPanel = Ext.ComponentQuery.query('mainviewport #center')[0];
+        //? create the view with students 
+        let tab = centerPanel.items.findBy((item, index) => {
+            return title === item.title;
         });
-
-        if (newItem === null || newItem === undefined) {
-            newItem = center.add({
-                xtype: 'studentview',
-                iconCls: 'fa fas-users',
-                title: 'Students',
+        //? add the view to the tabpanel and make it active
+        if (!tab) {
+            tab = centerPanel.add({
+                xtype: xtype,
+                title: title,
+                iconCls: iconCls,
                 closable: true,
             });
         }
-        center.setActiveItem(newItem);
+        //? make the item active
+        centerPanel.setActiveItem(tab);
 
+    },
+
+    onCountiesActivated: function() {
+        this.showView("Counties", "countypanel", "fa fa-list-alt");
     },
     init: function() {
         var me = this,

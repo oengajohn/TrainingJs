@@ -9,7 +9,8 @@ Ext.define('TrainingJs.Util', {
         },
         showError: function(text) {
             Ext.Msg.alert('Error', text);
-        }
+        },
+
 
     }
 
