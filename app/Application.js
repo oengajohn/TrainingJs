@@ -36,5 +36,16 @@ Ext.define('TrainingJs.Application', {
         } else {
             Ext.widget('loginwindow');
         }
+    },
+    listen: {
+        controller: {
+            '#': {
+                unmatchedroute: 'onUnmatchedRoute'
+            }
+        }
+    },
+    onUnmatchedRoute: function(hash) {
+        TrainingJs.Util.showError("Page not found: " + hash.toString());
     }
+
 });

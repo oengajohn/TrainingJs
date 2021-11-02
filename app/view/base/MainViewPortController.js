@@ -10,8 +10,62 @@ Ext.define('TrainingJs.view.base.MainViewPortController', {
     routes: {
         'students': 'onStudentUrlActivated',
         'counties': 'onCountiesActivated',
-        'student-form-panel': 'onShowStudentFormPanel',
-        "students/:id": "onShowStudentWithId"
+        'student-form-panel': {
+            before: 'checkIfHasAdminRights',
+            action: 'onShowStudentFormPanel',
+        },
+
+        "students/:regNo": {
+            action: 'onStudentRegistration',
+            conditions: {
+                ':regNo': '([0-9]{10})'
+            }
+        },
+        "students/:id": {
+            action: 'onShowStudentWithId',
+            conditions: {
+                ':id': '([0-9]{2})'
+            }
+        },
+    },
+    checkIfHasAdminRights: function() {
+        //* Case 1 => Calling stop/resume on the action
+        //* The function should be receiving the last parameter as 
+        //! ACTION
+        // //? make a request to the server to check if the user has the right to access this page.
+
+        // let hasAccess = false;
+        // if (hasAccess) {
+        //     //? process the request
+        //     action.resume();
+        // } else {
+        //     //? stop the current request
+        //     TrainingJs.Util.showError("You do not have permission to access this page", action);
+        //     action.stop();
+        // }
+
+        //* Case 2 => making use of promises
+        //? return a promise
+
+        return new Promise(function(resolve, reject) {
+            //? make the request to the server to determine if the user is allowed to access this page.
+            let hasAccess = false;
+            //? if successful
+            if (hasAccess) {
+                //? return resolve
+                resolve();
+
+            } else {
+                //! return reject
+                reject("You do not have permission to access this page.");
+            }
+
+        });
+
+
+    },
+    onStudentRegistration: function(regNo) {
+        console.log(regNo);
     },
     onShowStudentWithId: function(id) {
         console.log("Student with id routes was executed");

@@ -10,6 +10,11 @@ Ext.define('TrainingJs.view.base.NavigationPanelController', {
     init: function() {},
     onItemClick: function(treepanel, record, item, index, e, eOpts) {
         console.log(record);
-        this.redirectTo(record.get('url'));
+        // this.redirectTo(record.get('url'));
+        this.redirectTo({
+            bar: 'barber',
+            bazRoute: 'baz',
+            foo: null
+        });
     }
 });
