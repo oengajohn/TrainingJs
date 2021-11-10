@@ -58,6 +58,9 @@ Ext.define('TrainingJs.view.students.StudentView', {
         {
             text: 'Refresh',
             handler: 'onRefreshButtonClick',
+        }, {
+            text: 'Show Form',
+            handler: 'onShowFormButtonClick',
         },
         {
             text: 'ToggleIsAdmin',

@@ -83,6 +83,11 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
     onRefreshButtonClick: function() {
         this.loadGridStore();
     },
+    onShowFormButtonClick: function() {
+        Ext.create({
+            xtype: 'cardlayoutform',
+        });
+    },
     onToggleIsAdminButtonClick: function(btn, e, eOpts) {
         var me = this,
             view = me.getView(),
