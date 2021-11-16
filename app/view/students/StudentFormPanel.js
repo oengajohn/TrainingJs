@@ -19,7 +19,7 @@ Ext.define('TrainingJs.view.students.StudentFormPanel', {
         },
         {
             fieldLabel: 'Student Registration',
-            name: 'regNo'
+            name: 'registrationNumber'
         },
         {
             fieldLabel: 'Student County',

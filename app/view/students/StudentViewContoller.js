@@ -33,6 +33,7 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
             var form = window.lookupReference('add-form').getForm();
             // case 1
             form.loadRecord(record);
+
             //case 2
             /*form.load({
                 url: `http://localhost:3000/students/${record.get('id')}`,
@@ -51,6 +52,35 @@ Ext.define('TrainingJs.view.students.StudentViewController', {
                     console.log(action.type);
                 }
             })*/
+
+            //case 3
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('registrationNumber').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
+            // form.findField('id').setValue(record.get('id'));
+            // form.findField('name').setValue(record.get('name'));
+            // form.findField('regNo').setValue(record.get('regNo'));
 
         }
 

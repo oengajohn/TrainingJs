@@ -4,6 +4,7 @@ Ext.define('TrainingJs.view.counties.CountiesView', {
     reference: 'countiesview',
     controller: 'countiesviewcontroller',
     loadMask: true,
+    itemId: 'grid',
     stripeRows: true,
     bind: {
         title: '{myTitle}',
@@ -47,6 +48,9 @@ Ext.define('TrainingJs.view.counties.CountiesView', {
                 disabled: '{!countiesview.selection}'
             },
             handler: 'onDetailsButtonClick',
+        }, {
+            text: 'showForm',
+            handler: 'onShowForm'
         }],
     },
     bbar: {

@@ -2,6 +2,7 @@ Ext.define('TrainingJs.view.students.StudentView', {
     extend: 'Ext.grid.Panel',
     xtype: 'studentview',
     reference: 'studentview',
+    itemId: 'grid',
     controller: 'studentviewcontroller',
     //mandatory properties for grid => columns, store
     store: {
@@ -22,7 +23,7 @@ Ext.define('TrainingJs.view.students.StudentView', {
         },
         {
             text: 'Registration Number',
-            dataIndex: 'regNo', //3/6
+            dataIndex: 'registrationNumber', //3/6
             flex: 3
         },
         {

@@ -19,5 +19,5 @@ Ext.application({
 
 
     // The name of the initial view to create.
-    mainView: 'TrainingJs.view.base.MainViewPort'
+    mainView: 'TrainingJs.view.base.MainViewPort',
 });

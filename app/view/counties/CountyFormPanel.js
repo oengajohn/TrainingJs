@@ -1,17 +1,21 @@
 Ext.define('TrainingJs.view.counties.CountyFormPanel', {
     extend: 'Ext.form.Panel',
-    xtype: 'countyformpanel',
+    // xtype: 'countyformpanel', 
+    alias: 'widget.countyformpanel',
     reference: 'countyformpanel',
     layout: 'form',
+
     viewModel: {
         type: 'countyformpanelviewmodel'
     },
+
     defaults: {
         xtype: 'textfield',
         allowBlank: false,
     },
     items: [{
             fieldLabel: 'Id',
+            itemId: 'id',
             bind: {
                 value: '{record.id}',
             },

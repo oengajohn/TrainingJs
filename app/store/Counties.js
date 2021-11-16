@@ -6,7 +6,7 @@ Ext.define('TrainingJs.store.Counties', {
     pageSize: 50,
     proxy: {
         type: 'ajax',
-        url: 'http://localhost:3000/counties',
+        url: host + '/counties',
         reader: {
             type: 'json',
             rootProperty: 'counties',

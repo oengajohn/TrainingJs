@@ -3,6 +3,8 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
+const host = "http://localhost:3000";
+myLastCustomer = 123456;
 Ext.define('TrainingJs.Application', {
     extend: 'Ext.app.Application',
 

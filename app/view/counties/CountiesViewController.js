@@ -12,6 +12,12 @@ Ext.define('TrainingJs.view.counties.CountiesViewController', {
         return record.get('code') + "-" + record.get('name');
 
     },
+    onShowForm: function() {
+        Ext.create({
+            // xtype: 'cartesianchartwindow'
+            xtype: 'simplebarwindow'
+        });
+    },
     init: function() {
         this.loadGridStore();
     },
@@ -22,6 +28,7 @@ Ext.define('TrainingJs.view.counties.CountiesViewController', {
         let countyformpanel = Ext.ComponentQuery.query('countyformpanel')[0];
         countyformpanel.getViewModel().
         set('record', record);
+
     },
     onCountyAdd: function() {
 

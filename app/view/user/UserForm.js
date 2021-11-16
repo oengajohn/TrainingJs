@@ -12,7 +12,12 @@ Ext.define('TrainingJs.view.user.UserForm', {
         },
         //content of the form
         items: [{
+                xtype: 'textfield',
+                name: 'company.companyName',
+                fieldLabel: 'Company Name'
+            }, {
                 xtype: 'numberfield',
+                itemId: 'id',
                 name: 'id',
                 fieldLabel: 'Student ID',
                 minValue: 0,
@@ -24,11 +29,7 @@ Ext.define('TrainingJs.view.user.UserForm', {
                 fieldLabel: 'Name'
             },
 
-            {
-                xtype: 'textfield',
-                name: 'company.companyName',
-                fieldLabel: 'Company Name'
-            },
+
             {
                 xtype: 'textfield',
                 name: 'address.suite',

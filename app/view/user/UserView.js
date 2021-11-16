@@ -1,6 +1,7 @@
 Ext.define('TrainingJs.view.user.UserView', {
     extend: 'Ext.grid.GridPanel',
     xtype: 'userview',
+    id: 'grid',
 
     controller: 'userviewcontroller',
 
